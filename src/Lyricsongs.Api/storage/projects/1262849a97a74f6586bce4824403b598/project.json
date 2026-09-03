@@ -1,0 +1,23 @@
+{
+  "id": "1262849a97a74f6586bce4824403b598",
+  "name": "Untitled Lyric Video",
+  "createdAt": "2026-08-24T07:23:58.3451388+00:00",
+  "updatedAt": "2026-08-24T08:18:43.4444843+00:00",
+  "audioRelativePath": "projects/1262849a97a74f6586bce4824403b598/audio/87f6536b6f8e411783ce4e3a3a9771e1_\u0BA8\u0BBE\u0BA9\u0BCD \u0BAA\u0BCA\u0BB2\u0BCD\u0BB2\u0BBE\u0BA4\u0BB5\u0BA9\u0BCD HD Video Song _ Polladhavan Movie Song _ Rajinikanth _ Lakshmi _ M. S. Viswanathan - (256 Kbps).mp3",
+  "audioFileName": "\u0BA8\u0BBE\u0BA9\u0BCD \u0BAA\u0BCA\u0BB2\u0BCD\u0BB2\u0BBE\u0BA4\u0BB5\u0BA9\u0BCD HD Video Song _ Polladhavan Movie Song _ Rajinikanth _ Lakshmi _ M. S. Viswanathan - (256 Kbps).mp3",
+  "audioDurationMs": 262293,
+  "srtRelativePath": "projects/1262849a97a74f6586bce4824403b598/srt/2408c3c5ce2746c8843b25e50c0d7e95_\u0BA8\u0BBE\u0BA9\u0BCD \u0BAA\u0BCA\u0BB2\u0BCD\u0BB2\u0BBE\u0BA4\u0BB5\u0BA9\u0BCD.srt",
+  "srtFileName": "\u0BA8\u0BBE\u0BA9\u0BCD \u0BAA\u0BCA\u0BB2\u0BCD\u0BB2\u0BBE\u0BA4\u0BB5\u0BA9\u0BCD.srt",
+  "lyricCount": 27,
+  "assets": [
+    {
+      "id": "51f102b5-514d-462f-ab1b-fde0e67b932a",
+      "fileName": "\u0BA8\u0BBE\u0BA9\u0BCD \u0BAA\u0BCA\u0BB2\u0BCD\u0BB2\u0BBE\u0BA4\u0BB5\u0BA9\u0BCD.....png",
+      "relativePath": "projects/1262849a97a74f6586bce4824403b598/images/403fc425648047d6ba7b0e561a0f2b69_\u0BA8\u0BBE\u0BA9\u0BCD \u0BAA\u0BCA\u0BB2\u0BCD\u0BB2\u0BBE\u0BA4\u0BB5\u0BA9\u0BCD.....png",
+      "type": "image",
+      "sourceDurationMs": null,
+      "sortOrder": 0
+    }
+  ],
+  "settingsJson": "{\u0022PlanningMode\u0022:\u0022Sequential\u0022,\u0022RandomSeed\u0022:42,\u0022Transition\u0022:{\u0022Type\u0022:\u0022Fade\u0022,\u0022DurationMs\u0022:500},\u0022MinSegmentDurationMs\u0022:3000,\u0022LyricStyle\u0022:\u0022Cinematic\u0022,\u0022ResolutionPreset\u0022:\u0022FullHd1080p\u0022,\u0022Fps\u0022:30,\u0022DefaultImageAnimation\u0022:\u0022ZoomIn\u0022,\u0022CycleImageAnimations\u0022:true,\u0022FontOverride\u0022:null,\u0022FontSizeOverride\u0022:null,\u0022PositionOverride\u0022:null,\u0022AlignmentOverride\u0022:null,\u0022TextColorOverride\u0022:null,\u0022TextColor2Override\u0022:null,\u0022TextColor3Override\u0022:null,\u0022HighlightColorOverride\u0022:null,\u0022OutlineOverride\u0022:null,\u0022ShadowOverride\u0022:null,\u0022FadeInMsOverride\u0022:null,\u0022FadeOutMsOverride\u0022:null,\u0022AssetOrderOverride\u0022:null,\u0022ManualBackgrounds\u0022:null}"
+}

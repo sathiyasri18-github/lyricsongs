@@ -1,0 +1,23 @@
+{
+  "style": "karaoke",
+  "font": "Noto Sans Tamil",
+  "fontSize": 54,
+  "position": "bottom",
+  "alignment": "center",
+  "textColor": "#FFFFFF",
+  "highlightColor": "#FFD700",
+  "outlineColor": "#000000",
+  "outline": true,
+  "outlineWidth": 2,
+  "shadow": true,
+  "shadowColor": "#000000",
+  "shadowDepth": 2,
+  "opacity": 1.0,
+  "fadeInMs": 200,
+  "fadeOutMs": 200,
+  "marginHorizontal": 40,
+  "marginVertical": 60,
+  "videoWidth": 1920,
+  "videoHeight": 1080,
+  "karaokeSplit": "word"
+}

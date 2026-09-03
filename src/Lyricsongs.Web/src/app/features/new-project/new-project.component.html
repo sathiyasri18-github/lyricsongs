@@ -1,0 +1,112 @@
+<section class="np">
+  <header class="np__hero">
+    <p class="np__eyebrow">Studio</p>
+    <h1>Lyric Video Generator</h1>
+    <p class="np__lede">
+      Upload audio and backgrounds to get started. Lyrics are optional — upload an SRT or add cues manually in the editor.
+    </p>
+  </header>
+
+  <div class="np__name">
+    <label for="projectName">Project name</label>
+    <input
+      id="projectName"
+      pInputText
+      [(ngModel)]="projectName"
+      placeholder="e.g. Ennai Vittu"
+    />
+  </div>
+
+  <div class="np__uploads">
+    <app-upload-zone
+      label="Audio"
+      hint="MP3 · drag & drop"
+      accept="audio/mpeg,.mp3"
+      icon="pi pi-volume-up"
+      [fileName]="project()?.audio?.fileName || ''"
+      [progress]="audioProgress"
+      (filesSelected)="onAudio($event)"
+    />
+
+    <app-upload-zone
+      label="Lyrics"
+      hint="SRT · optional · or add manually in editor"
+      accept=".srt,application/x-subrip,text/plain"
+      icon="pi pi-align-left"
+      [fileName]="project()?.srt?.fileName || ''"
+      [progress]="srtProgress"
+      (filesSelected)="onSrt($event)"
+    />
+
+    <app-upload-zone
+      label="Background Images"
+      hint="JPG / PNG · multiple"
+      accept="image/jpeg,image/png,.jpg,.jpeg,.png"
+      icon="pi pi-image"
+      [multiple]="true"
+      [fileName]="project()?.images?.length ? project()!.images.length + ' images' : ''"
+      [progress]="imageProgress"
+      (filesSelected)="onImages($event)"
+    />
+
+    <app-upload-zone
+      label="Background Videos"
+      hint="MP4 · optional"
+      accept="video/mp4,.mp4"
+      icon="pi pi-video"
+      [multiple]="true"
+      [fileName]="project()?.videos?.length ? project()!.videos.length + ' clips' : ''"
+      [progress]="videoProgress"
+      (filesSelected)="onVideos($event)"
+    />
+  </div>
+
+  @if (summary(); as s) {
+    <div class="np__stats">
+      <div>
+        <span>Song</span>
+        <strong>{{ s.song }}</strong>
+      </div>
+      <div>
+        <span>Duration</span>
+        <strong>{{ s.duration }}</strong>
+      </div>
+      <div>
+        <span>Lyrics</span>
+        <strong>{{ s.lyrics }} lines</strong>
+      </div>
+      <div>
+        <span>Background Assets</span>
+        <strong>{{ s.assets }}</strong>
+      </div>
+    </div>
+  }
+
+  @if ((project()?.timeline?.length ?? 0) > 0) {
+    <section class="np__timeline">
+      <div class="np__section-head">
+        <h2>Background Timeline</h2>
+        <p>Auto-distributed across the song. Refine in the editor.</p>
+      </div>
+      <app-background-timeline
+        [segments]="project()!.timeline"
+        [totalDurationMs]="project()!.audio?.durationMs || 0"
+        [selectedIndex]="selectedSegment"
+        (select)="selectedSegment = $event"
+      />
+    </section>
+  }
+
+  <div class="np__actions">
+    <button
+      pButton
+      type="button"
+      label="Continue"
+      icon="pi pi-arrow-right"
+      iconPos="right"
+      [disabled]="!canContinue()"
+      (click)="continue()"
+    ></button>
+    <a routerLink="/projects" class="np__secondary">Back to projects</a>
+  </div>
+</section>

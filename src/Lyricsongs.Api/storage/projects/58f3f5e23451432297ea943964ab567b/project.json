@@ -1,0 +1,23 @@
+{
+  "id": "58f3f5e23451432297ea943964ab567b",
+  "name": "Untitled Lyric Video",
+  "createdAt": "2026-08-24T07:13:46.0748872+00:00",
+  "updatedAt": "2026-08-24T07:13:58.4929399+00:00",
+  "audioRelativePath": "projects/58f3f5e23451432297ea943964ab567b/audio/eba59059827749599319e9ddd36a6007_\u0BA8\u0BBE\u0BA9\u0BCD \u0BAA\u0BCA\u0BB2\u0BCD\u0BB2\u0BBE\u0BA4\u0BB5\u0BA9\u0BCD HD Video Song _ Polladhavan Movie Song _ Rajinikanth _ Lakshmi _ M. S. Viswanathan - (256 Kbps).mp3",
+  "audioFileName": "\u0BA8\u0BBE\u0BA9\u0BCD \u0BAA\u0BCA\u0BB2\u0BCD\u0BB2\u0BBE\u0BA4\u0BB5\u0BA9\u0BCD HD Video Song _ Polladhavan Movie Song _ Rajinikanth _ Lakshmi _ M. S. Viswanathan - (256 Kbps).mp3",
+  "audioDurationMs": 262293,
+  "srtRelativePath": null,
+  "srtFileName": null,
+  "lyricCount": null,
+  "assets": [
+    {
+      "id": "10683412-5173-4f1a-8ca5-0e3b34c1a08a",
+      "fileName": "\u0BA8\u0BBE\u0BA9\u0BCD \u0BAA\u0BCA\u0BB2\u0BCD\u0BB2\u0BBE\u0BA4\u0BB5\u0BA9\u0BCD.....png",
+      "relativePath": "projects/58f3f5e23451432297ea943964ab567b/images/3548b46fa8aa4d9bad09897f648f8361_\u0BA8\u0BBE\u0BA9\u0BCD \u0BAA\u0BCA\u0BB2\u0BCD\u0BB2\u0BBE\u0BA4\u0BB5\u0BA9\u0BCD.....png",
+      "type": "image",
+      "sourceDurationMs": null,
+      "sortOrder": 0
+    }
+  ],
+  "settingsJson": "{\u0022PlanningMode\u0022:\u0022Sequential\u0022,\u0022RandomSeed\u0022:42,\u0022Transition\u0022:{\u0022Type\u0022:\u0022Fade\u0022,\u0022DurationMs\u0022:500},\u0022MinSegmentDurationMs\u0022:3000,\u0022LyricStyle\u0022:\u0022Cinematic\u0022,\u0022ResolutionPreset\u0022:\u0022FullHd1080p\u0022,\u0022Fps\u0022:30,\u0022DefaultImageAnimation\u0022:\u0022ZoomIn\u0022,\u0022CycleImageAnimations\u0022:true,\u0022FontOverride\u0022:null,\u0022FontSizeOverride\u0022:null,\u0022PositionOverride\u0022:null,\u0022AlignmentOverride\u0022:null,\u0022TextColorOverride\u0022:null,\u0022TextColor2Override\u0022:null,\u0022TextColor3Override\u0022:null,\u0022HighlightColorOverride\u0022:null,\u0022OutlineOverride\u0022:null,\u0022ShadowOverride\u0022:null,\u0022FadeInMsOverride\u0022:null,\u0022FadeOutMsOverride\u0022:null,\u0022AssetOrderOverride\u0022:null,\u0022ManualBackgrounds\u0022:null}"
+}

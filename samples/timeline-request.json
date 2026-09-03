@@ -1,0 +1,48 @@
+{
+  "audioDurationMs": 245000,
+  "audioDurationSeconds": "245",
+  "orderingMode": "Manual",
+  "orderingSeed": 42,
+  "transitionDurationMs": 0,
+  "minSegmentDurationMs": 3000,
+  "assets": [
+    {
+      "id": "bg1",
+      "fileName": "bg1.jpg",
+      "type": "Image",
+      "sortOrder": 0
+    },
+    {
+      "id": "clip1",
+      "fileName": "clip1.mp4",
+      "type": "Video",
+      "sourceDurationMs": 35000,
+      "sortOrder": 1
+    },
+    {
+      "id": "bg2",
+      "fileName": "bg2.jpg",
+      "type": "Image",
+      "sortOrder": 2
+    },
+    {
+      "id": "bg3",
+      "fileName": "bg3.jpg",
+      "type": "Image",
+      "sortOrder": 3
+    },
+    {
+      "id": "clip2",
+      "fileName": "clip2.mp4",
+      "type": "Video",
+      "sourceDurationMs": 40000,
+      "sortOrder": 4
+    },
+    {
+      "id": "bg4",
+      "fileName": "bg4.jpg",
+      "type": "Image",
+      "sortOrder": 5
+    }
+  ]
+}

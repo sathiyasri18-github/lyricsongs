@@ -1,0 +1,23 @@
+{
+  "id": "92387926b8264475905270cdc09c20e8",
+  "name": "Untitled Lyric Video",
+  "createdAt": "2026-08-23T08:36:39.5854944+00:00",
+  "updatedAt": "2026-08-23T08:41:15.194773+00:00",
+  "audioRelativePath": "projects/92387926b8264475905270cdc09c20e8/audio/f74523a228e7404ba0038309dfcc3781_Anbulla-Sandhya.mp3",
+  "audioFileName": "Anbulla-Sandhya.mp3",
+  "audioDurationMs": 342518,
+  "srtRelativePath": "projects/92387926b8264475905270cdc09c20e8/srt/1f15f584442c4e4d9933a52193bf4885_Anbulla-Sandhya.srt",
+  "srtFileName": "Anbulla-Sandhya.srt",
+  "lyricCount": 63,
+  "assets": [
+    {
+      "id": "c6610126-6756-4c86-a04b-3223874eb42f",
+      "fileName": "chrome_tMPELujt83.jpg",
+      "relativePath": "projects/92387926b8264475905270cdc09c20e8/images/ee21941c0c5b42b0ad52a5c066b2efa4_chrome_tMPELujt83.jpg",
+      "type": "image",
+      "sourceDurationMs": null,
+      "sortOrder": 0
+    }
+  ],
+  "settingsJson": "{\u0022PlanningMode\u0022:\u0022Sequential\u0022,\u0022RandomSeed\u0022:42,\u0022Transition\u0022:{\u0022Type\u0022:\u0022Fade\u0022,\u0022DurationMs\u0022:500},\u0022MinSegmentDurationMs\u0022:3000,\u0022LyricStyle\u0022:\u0022Cinematic\u0022,\u0022ResolutionPreset\u0022:\u0022FullHd1080p\u0022,\u0022Fps\u0022:30,\u0022DefaultImageAnimation\u0022:\u0022ZoomIn\u0022,\u0022CycleImageAnimations\u0022:true,\u0022FontOverride\u0022:\u0022Noto Sans Tamil\u0022,\u0022FontSizeOverride\u0022:54,\u0022PositionOverride\u0022:\u0022Bottom\u0022,\u0022AlignmentOverride\u0022:null,\u0022TextColorOverride\u0022:\u0022#FFFFFF\u0022,\u0022HighlightColorOverride\u0022:\u0022#FFD700\u0022,\u0022OutlineOverride\u0022:true,\u0022ShadowOverride\u0022:true,\u0022FadeInMsOverride\u0022:null,\u0022FadeOutMsOverride\u0022:null,\u0022AssetOrderOverride\u0022:null,\u0022ManualBackgrounds\u0022:null}"
+}

@@ -1,0 +1,44 @@
+{
+  "isValid": true,
+  "hasWarnings": false,
+  "lyrics": [
+    {
+      "index": 1,
+      "start": "00:00:05.000",
+      "end": "00:00:09.000",
+      "text": "என்னை விட்டு போகாதே",
+      "durationMs": 4000,
+      "gapToNextMs": 0
+    },
+    {
+      "index": 2,
+      "start": "00:00:09.000",
+      "end": "00:00:13.500",
+      "text": "என் உயிரே நீயே",
+      "durationMs": 4500,
+      "gapToNextMs": null
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "gaps": [
+    {
+      "fromIndex": 1,
+      "toIndex": 2,
+      "gapMs": 0,
+      "fromEnd": "00:00:09.000",
+      "toStart": "00:00:09.000"
+    }
+  ],
+  "overlaps": [],
+  "summary": {
+    "cueCount": 2,
+    "errorCount": 0,
+    "warningCount": 0,
+    "overlapCount": 0,
+    "gapCount": 1,
+    "firstCueStartMs": 5000,
+    "lastCueEndMs": 13500,
+    "totalCoveredDurationMs": 8500
+  }
+}

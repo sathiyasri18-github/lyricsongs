@@ -1,0 +1,23 @@
+{
+  "id": "b95fa58c3d3c4f17af27e4cbd5d3da3b",
+  "name": "Untitled Lyric Video",
+  "createdAt": "2026-08-23T11:35:11.0313162+00:00",
+  "updatedAt": "2026-08-23T12:27:35.8400441+00:00",
+  "audioRelativePath": "projects/b95fa58c3d3c4f17af27e4cbd5d3da3b/audio/d9b53debb8384b1cb4bfe302d63ed417_Ninaithu Ninaithu Parthen - 4K Video _ 7G Rainbow Colony Songs _ Ravi Krishna _ Yuvan Shankar Raja - (320 Kbps).mp3",
+  "audioFileName": "Ninaithu Ninaithu Parthen - 4K Video _ 7G Rainbow Colony Songs _ Ravi Krishna _ Yuvan Shankar Raja - (320 Kbps).mp3",
+  "audioDurationMs": 215690,
+  "srtRelativePath": "projects/b95fa58c3d3c4f17af27e4cbd5d3da3b/srt/3f3ec1d9cbd64284b2f0c52050db35a8_[Tamil (auto-generated)] Ninaithu Ninaithu Parthen - 4K Video  7G Rainbow Colony Songs  Ravi Krishna.srt",
+  "srtFileName": "[Tamil (auto-generated)] Ninaithu Ninaithu Parthen - 4K Video  7G Rainbow Colony Songs  Ravi Krishna.srt",
+  "lyricCount": 38,
+  "assets": [
+    {
+      "id": "fdbde16e-b25f-48bb-bb24-e10c1016276f",
+      "fileName": "64ba30c95c144fa4a53eba43b2fb9dfd.png",
+      "relativePath": "projects/b95fa58c3d3c4f17af27e4cbd5d3da3b/images/eafd28d0ccbd4d31b4c4ddfbebdb6cb7_64ba30c95c144fa4a53eba43b2fb9dfd.png",
+      "type": "image",
+      "sourceDurationMs": null,
+      "sortOrder": 0
+    }
+  ],
+  "settingsJson": "{\u0022PlanningMode\u0022:\u0022Sequential\u0022,\u0022RandomSeed\u0022:42,\u0022Transition\u0022:{\u0022Type\u0022:\u0022Fade\u0022,\u0022DurationMs\u0022:500},\u0022MinSegmentDurationMs\u0022:3000,\u0022LyricStyle\u0022:\u0022Cinematic\u0022,\u0022ResolutionPreset\u0022:\u0022FullHd1080p\u0022,\u0022Fps\u0022:30,\u0022DefaultImageAnimation\u0022:\u0022ZoomIn\u0022,\u0022CycleImageAnimations\u0022:true,\u0022FontOverride\u0022:\u0022Meera Inimai\u0022,\u0022FontSizeOverride\u0022:54,\u0022PositionOverride\u0022:\u0022Center\u0022,\u0022AlignmentOverride\u0022:null,\u0022TextColorOverride\u0022:\u0022#FFFFFF\u0022,\u0022HighlightColorOverride\u0022:\u0022#FFD700\u0022,\u0022OutlineOverride\u0022:true,\u0022ShadowOverride\u0022:true,\u0022FadeInMsOverride\u0022:null,\u0022FadeOutMsOverride\u0022:null,\u0022AssetOrderOverride\u0022:null,\u0022ManualBackgrounds\u0022:null}"
+}

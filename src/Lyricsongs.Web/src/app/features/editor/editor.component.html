@@ -1,0 +1,244 @@
+<section class="editor" *ngIf="project() as p; else missing">
+  <header class="editor__head">
+    <div>
+      <p class="eyebrow">Editor</p>
+      <h1>{{ p.name }}</h1>
+    </div>
+    <div class="editor__actions">
+      <button pButton type="button" class="p-button-outlined" label="Preview" (click)="goPreview()"></button>
+      <button pButton type="button" label="Render" icon="pi pi-play" (click)="goRender()"></button>
+    </div>
+  </header>
+
+  <p-tabs [(value)]="activeTab">
+    <p-tablist>
+      <p-tab value="0">SRT Preview</p-tab>
+      <p-tab value="1">Timeline</p-tab>
+      <p-tab value="2">Assets</p-tab>
+      <p-tab value="3">Lyric Style</p-tab>
+      <p-tab value="4">Video Settings</p-tab>
+      <p-tab value="5">Live Preview</p-tab>
+    </p-tablist>
+
+    <p-tabpanels>
+      <p-tabpanel value="0">
+        <app-srt-preview-table
+          [lyrics]="p.lyrics"
+          [audioUrl]="audioPlaybackUrl()"
+          [durationMs]="p.audio?.durationMs || 0"
+          [saving]="lyricsSaving()"
+          (lyricsChange)="onLyricsChange($event)"
+          (saveRequest)="saveLyricsNow()"
+        />
+        <app-transcript-qc
+          [lyrics]="p.lyrics"
+          (lyricsChange)="onLyricsChange($event)"
+        />
+        <p class="hint">
+          Paste transcript with <strong>|</strong> separators below, click <strong>Create cues from transcript</strong>, then play audio and use
+          <strong>Mark In</strong> / <strong>Mark Out</strong> (I / O) or <strong>Add cue</strong> (P) to set times.
+          Marks are placed 2 s before the playhead. Slow speeds (0.65×–0.95×) help nail timings. Space toggles play/pause.
+        </p>
+      </p-tabpanel>
+
+      <p-tabpanel value="1">
+        <app-background-timeline
+          [segments]="p.timeline"
+          [totalDurationMs]="p.audio?.durationMs || 0"
+          [selectedIndex]="selectedSegment"
+          (select)="selectedSegment = $event"
+        />
+        @if (selectedSegment !== null && p.timeline[selectedSegment]; as seg) {
+          <div class="seg-detail">
+            <strong>{{ seg.fileName }}</strong>
+            <span>{{ seg.type }} · {{ seg.animation }}</span>
+            <span>Transition: {{ seg.transitionOut }} ({{ seg.transitionOutDurationMs }} ms)</span>
+          </div>
+        }
+      </p-tabpanel>
+
+      <p-tabpanel value="2">
+        <div class="asset-grid">
+          <div>
+            <h3>Images</h3>
+            <p-orderList
+              [value]="images()"
+              (onReorder)="onImageReorder()"
+              [dragdrop]="true"
+              [listStyle]="{ height: '20rem' }"
+            >
+              <ng-template let-item pTemplate="item">
+                <div class="asset-row">
+                  @if (item.localUrl) {
+                    <img [src]="item.localUrl" [alt]="item.fileName" />
+                  }
+                  <span>{{ item.fileName }}</span>
+                </div>
+              </ng-template>
+            </p-orderList>
+          </div>
+          <div>
+            <h3>Videos</h3>
+            <p-orderList
+              [value]="videos()"
+              (onReorder)="onVideoReorder()"
+              [dragdrop]="true"
+              [listStyle]="{ height: '20rem' }"
+            >
+              <ng-template let-item pTemplate="item">
+                <div class="asset-row">
+                  <i class="pi pi-video"></i>
+                  <span>{{ item.fileName }}</span>
+                </div>
+              </ng-template>
+            </p-orderList>
+          </div>
+        </div>
+      </p-tabpanel>
+
+      <p-tabpanel value="3">
+        <form class="form-grid" [formGroup]="settingsForm">
+          <div class="field">
+            <label>Style</label>
+            <p-select [options]="lyricStyles" formControlName="lyricStyle" optionLabel="label" optionValue="value" [filter]="true" filterPlaceholder="Search styles" />
+          </div>
+          <div class="field">
+            <label>Font</label>
+            <p-select [options]="fonts" formControlName="font" optionLabel="label" optionValue="value" [filter]="true" filterPlaceholder="Search fonts" />
+          </div>
+          <div class="field">
+            <label>Font size</label>
+            <p-inputNumber formControlName="fontSize" [min]="12" [max]="200" />
+          </div>
+          <div class="field">
+            <label>Position</label>
+            <p-select [options]="positions" formControlName="position" optionLabel="label" optionValue="value" />
+          </div>
+          <div class="field">
+            <label>Text transition</label>
+            <p-select
+              [options]="lyricTextTransitions"
+              formControlName="lyricTextTransition"
+              optionLabel="label"
+              optionValue="value"
+            />
+          </div>
+          <div class="field">
+            <label>Fade in (ms)</label>
+            <p-inputNumber
+              formControlName="lyricFadeInMs"
+              [min]="0"
+              [max]="2000"
+              [disabled]="settingsForm.value.lyricTextTransition === 'styleDefault'"
+            />
+          </div>
+          <div class="field">
+            <label>Fade out (ms)</label>
+            <p-inputNumber
+              formControlName="lyricFadeOutMs"
+              [min]="0"
+              [max]="2000"
+              [disabled]="settingsForm.value.lyricTextTransition === 'styleDefault'"
+            />
+          </div>
+          <div class="field">
+            <label>Gradient color 1</label>
+            <p-colorPicker formControlName="textColor" format="hex" />
+          </div>
+          <div class="field">
+            <label>Gradient color 2</label>
+            <p-colorPicker formControlName="gradientColor2" format="hex" />
+          </div>
+          <div class="field">
+            <label>Gradient color 3</label>
+            <p-colorPicker formControlName="gradientColor3" format="hex" />
+          </div>
+          <div class="field">
+            <label>Highlight (karaoke)</label>
+            <p-colorPicker formControlName="highlightColor" format="hex" />
+          </div>
+          <div class="field field--check">
+            <p-checkbox formControlName="outline" [binary]="true" inputId="outline" />
+            <label for="outline">Outline</label>
+          </div>
+          <div class="field field--check">
+            <p-checkbox formControlName="shadow" [binary]="true" inputId="shadow" />
+            <label for="shadow">Shadow</label>
+          </div>
+        </form>
+
+        <div class="lyric-preview">
+          <p class="lyric-preview__label">Live preview</p>
+          <p
+            class="lyric-preview__text"
+            [ngStyle]="gradientPreviewStyle()"
+            [style.fontFamily]="'\'' + (settingsForm.value.font || 'Noto Sans Tamil') + '\', sans-serif'"
+            [style.fontSize.px]="settingsForm.value.fontSize"
+            [style.textShadow]="settingsForm.value.shadow ? '0 2px 8px rgba(0,0,0,.65)' : 'none'"
+            [style.-webkit-text-stroke]="settingsForm.value.outline ? '1px #000' : '0'"
+          >
+            {{ previewCue()?.text || 'என்னை விட்டு போகாதே' }}
+          </p>
+        </div>
+      </p-tabpanel>
+
+      <p-tabpanel value="4">
+        <form class="form-grid" [formGroup]="settingsForm">
+          <div class="field">
+            <label>Resolution / aspect</label>
+            <p-select [options]="resolutions" formControlName="resolutionPreset" optionLabel="label" optionValue="value" />
+          </div>
+          <div class="field">
+            <label>FPS</label>
+            <p-select [options]="fpsOptions" formControlName="fps" optionLabel="label" optionValue="value" />
+          </div>
+          <div class="field">
+            <label>Planning mode</label>
+            <p-select [options]="planningModes" formControlName="planningMode" optionLabel="label" optionValue="value" />
+          </div>
+          <div class="field">
+            <label>Transition</label>
+            <p-select [options]="transitions" formControlName="transitionType" optionLabel="label" optionValue="value" [filter]="true" filterPlaceholder="Search transitions" />
+          </div>
+          <div class="field">
+            <label>Transition duration (ms)</label>
+            <p-select
+              [options]="[{label:'500',value:500},{label:'1000',value:1000},{label:'1500',value:1500}]"
+              formControlName="transitionDurationMs"
+              optionLabel="label"
+              optionValue="value"
+            />
+          </div>
+        </form>
+        @if (settingsForm.value.transitionType !== 'none') {
+          <app-transition-preview
+            [transitionType]="settingsForm.value.transitionType || 'fade'"
+            [durationMs]="settingsForm.value.transitionDurationMs || 500"
+          />
+        }
+        <p class="hint">Output is always H.264 + AAC in an MP4 container.</p>
+      </p-tabpanel>
+
+      <p-tabpanel value="5">
+        @if (p.audio?.localUrl && p.timeline.length) {
+          <app-lyric-video-preview
+            [audioUrl]="p.audio!.localUrl!"
+            [durationMs]="p.audio!.durationMs || 0"
+            [lyrics]="p.lyrics"
+            [timeline]="p.timeline"
+            [settings]="p.settings"
+          />
+        } @else {
+          <p class="hint">Upload audio and backgrounds to enable live preview.</p>
+        }
+      </p-tabpanel>
+    </p-tabpanels>
+  </p-tabs>
+</section>
+
+<ng-template #missing>
+  <section class="empty">
+    <h1>No active project</h1>
+    <a routerLink="/new" pButton label="Create project"></a>
+  </section>
+</ng-template>

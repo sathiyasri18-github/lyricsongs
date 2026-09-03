@@ -1,0 +1,55 @@
+using System.Text.Json.Serialization;
+
+namespace Lyricsongs.Domain.Lyrics;
+
+[JsonConverter(typeof(JsonStringEnumConverter))]
+public enum LyricAnimationStyle
+{
+    Classic,
+    Karaoke,
+    Pop,
+    Cinematic,
+    Minimal,
+    Bold,
+    Neon,
+    Glow,
+    Bounce,
+    SlideUp,
+    SlideDown,
+    SlideLeft,
+    SlideRight,
+    Typewriter,
+    Wave,
+    Pulse,
+    Shake,
+    Rotate,
+    BlurIn,
+    Shadow,
+    Outline,
+    Gradient,
+    Retro,
+    Elegant,
+    // Additional animations
+    ZoomIn,
+    ZoomOut,
+    DropIn,
+    FlipIn,
+    Spin,
+    Drift,
+    Float,
+    Elastic,
+    Slam,
+    Whisper,
+    SoftGlow,
+    HardCut,
+    Glitch,
+    RiseFade,
+    Cascade,
+    SoftSlide,
+    Instant,
+    SlowReveal,
+    Swing,
+    ZoomPulse,
+    Echo,
+    Spotlight
+}

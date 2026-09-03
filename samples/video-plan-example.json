@@ -1,0 +1,66 @@
+{
+  "planId": "plan_example",
+  "audioDurationMs": 70000,
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "videoCodec": "libx264",
+    "audioCodec": "aac",
+    "format": "mp4"
+  },
+  "backgrounds": [
+    {
+      "assetId": "bg1",
+      "type": "image",
+      "start": 0,
+      "end": 35,
+      "animation": "zoomIn",
+      "transitionOut": "none",
+      "transitionOutDurationMs": 0,
+      "playbackMode": "normal",
+      "loopCount": 1
+    },
+    {
+      "assetId": "clip1",
+      "type": "video",
+      "start": 35,
+      "end": 70,
+      "animation": "none",
+      "transitionOut": "none",
+      "transitionOutDurationMs": 0,
+      "playbackMode": "normal",
+      "loopCount": 1
+    }
+  ],
+  "lyrics": {
+    "style": "cinematic",
+    "font": "Noto Sans Tamil",
+    "fontSize": 54,
+    "position": "bottom",
+    "alignment": "center",
+    "textColor": "#FFFFFF",
+    "highlightColor": "#FFD700",
+    "outline": true,
+    "shadow": true,
+    "fadeIn": 300,
+    "fadeOut": 300
+  },
+  "transition": {
+    "type": "none",
+    "durationMs": 0
+  },
+  "subtitles": [
+    {
+      "index": 1,
+      "start": "00:00:05.000",
+      "end": "00:00:09.000",
+      "text": "என்னை விட்டு போகாதே",
+      "startMs": 5000,
+      "endMs": 9000
+    }
+  ],
+  "orderedAssetIds": ["bg1", "clip1"],
+  "planningMode": "sequential",
+  "randomSeed": 42
+}

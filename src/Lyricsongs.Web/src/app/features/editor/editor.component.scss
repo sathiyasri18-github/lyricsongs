@@ -1,0 +1,138 @@
+.editor__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: end;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.editor__head h1 {
+  margin: 0.1rem 0 0;
+  font-family: var(--ls-font-display);
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+
+.eyebrow {
+  margin: 0;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--ls-accent);
+}
+
+.editor__actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.lyric-text {
+  white-space: pre-wrap;
+  font-family: 'Noto Sans Tamil', 'Noto Sans', sans-serif;
+}
+
+.seg-detail {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.25rem;
+  padding: 1rem;
+  background: var(--ls-surface);
+}
+
+.asset-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.asset-grid h3 {
+  margin: 0 0 0.75rem;
+  font-family: var(--ls-font-display);
+  font-weight: 500;
+}
+
+.asset-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.asset-row img {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.25rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.field label {
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ls-muted);
+}
+
+.field--check {
+  grid-auto-flow: column;
+  justify-content: start;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.lyric-preview {
+  margin-top: 1.5rem;
+  min-height: 10rem;
+  display: grid;
+  place-content: end center;
+  padding: 1.5rem;
+  border-radius: 4px;
+  background:
+    linear-gradient(180deg, transparent 20%, rgba(0, 0, 0, 0.55)),
+    linear-gradient(135deg, #243040, #151b24);
+}
+
+.lyric-preview__label {
+  margin: 0;
+  justify-self: start;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #c9d0d8;
+}
+
+.lyric-preview__text {
+  margin: 0;
+  text-align: center;
+  font-family: 'Noto Sans Tamil', 'Noto Sans', sans-serif;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.hint {
+  margin-top: 1rem;
+  color: var(--ls-muted);
+  font-size: 0.9rem;
+}
+
+.empty {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+@media (max-width: 800px) {
+  .asset-grid,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

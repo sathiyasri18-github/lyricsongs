@@ -1,0 +1,84 @@
+<div class="lvp">
+  <div class="lvp__stage" [style.aspectRatio]="aspectRatio">
+    <canvas #canvas class="lvp__canvas" aria-label="Lyric video preview"></canvas>
+    <audio #audio preload="auto" (ended)="pause()"></audio>
+    <div #videoPool class="lvp__video-pool" aria-hidden="true"></div>
+
+    <div class="lvp__badges">
+      <span>{{ settings.lyricStyle || 'classic' }}</span>
+      <span>{{ settings.font || 'Noto Sans Tamil' }}</span>
+      @if (currentSegment(); as seg) {
+        <span>{{ seg.fileName }}</span>
+      }
+    </div>
+  </div>
+
+  <div class="lvp__transport">
+    <div class="lvp__buttons">
+      <button
+        pButton
+        type="button"
+        [icon]="playing() ? 'pi pi-pause' : 'pi pi-play'"
+        [label]="playing() ? 'Pause' : 'Play'"
+        (click)="playing() ? pause() : play()"
+        [disabled]="!audioUrl"
+      ></button>
+      <button
+        pButton
+        type="button"
+        class="p-button-outlined"
+        icon="pi pi-replay"
+        label="Restart"
+        (click)="restart()"
+        [disabled]="!audioUrl"
+      ></button>
+    </div>
+
+    <div class="lvp__scrub">
+      <span class="lvp__time">{{ formatMs(currentMs()) }}</span>
+      <p-slider
+        class="lvp__slider"
+        [ngModel]="scrubValue()"
+        (ngModelChange)="onScrub($event)"
+        [min]="0"
+        [max]="100"
+        [step]="0.05"
+      />
+      <span class="lvp__time">{{ formatMs(effectiveDurationMs) }}</span>
+    </div>
+  </div>
+
+  <div class="lvp__readout">
+    <div class="lvp__card">
+      <span class="lvp__card-label">Current background</span>
+      <strong>{{ currentSegment()?.fileName || '—' }}</strong>
+      <small>
+        @if (currentSegment(); as seg) {
+          {{ formatMs(seg.startMs) }} – {{ formatMs(seg.endMs) }} · {{ seg.animation }}
+        } @else {
+          No segment
+        }
+      </small>
+    </div>
+
+    <div class="lvp__card lvp__card--focus">
+      <span class="lvp__card-label">Current lyric</span>
+      <strong class="lvp__lyric">{{ currentLyric()?.text || '—' }}</strong>
+      <small>
+        @if (currentLyric(); as cue) {
+          {{ cue.start }} → {{ cue.end }}
+        }
+      </small>
+    </div>
+
+    <div class="lvp__card">
+      <span class="lvp__card-label">Next lyric</span>
+      <strong class="lvp__lyric lvp__lyric--next">{{ nextLyric()?.text || '—' }}</strong>
+      <small>
+        @if (nextLyric(); as cue) {
+          starts {{ cue.start }}
+        }
+      </small>
+    </div>
+  </div>
+</div>

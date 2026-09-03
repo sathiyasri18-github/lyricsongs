@@ -1,0 +1,68 @@
+@import 'primeicons/primeicons.css';
+@import 'primeflex/primeflex.css';
+
+:root {
+  --ls-bg: #0c1016;
+  --ls-surface: #151b24;
+  --ls-text: #f2eee6;
+  --ls-muted: #9aa3ae;
+  --ls-accent: #e0a045;
+  --ls-accent-deep: #b87a28;
+  --ls-font-display: 'Fraunces', Georgia, serif;
+  --ls-font-body: 'DM Sans', 'Noto Sans Tamil', system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: var(--ls-font-body);
+  color: var(--ls-text);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(224, 160, 69, 0.14), transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, rgba(70, 110, 140, 0.12), transparent 50%),
+    var(--ls-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--ls-font-display);
+  font-weight: 500;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+/* PrimeNG dark-surface tweaks */
+.p-datatable,
+.p-orderlist,
+.p-select,
+.p-inputnumber,
+.p-tabs {
+  --p-content-background: var(--ls-surface);
+}
+
+.p-button {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.p-datatable .p-datatable-tbody > tr > td,
+.p-datatable .p-datatable-thead > tr > th {
+  background: transparent;
+}

@@ -1,0 +1,23 @@
+{
+  "id": "dbad742ac7754891a7f33d85c2eb9f57",
+  "name": "test",
+  "createdAt": "2026-09-05T09:53:55.1623061+00:00",
+  "updatedAt": "2026-09-05T09:58:53.0188183+00:00",
+  "audioRelativePath": "projects/dbad742ac7754891a7f33d85c2eb9f57/audio/bdaf34f88ca844a4b0b470a8af4394b7_Sempoove-Poove-VmusiQ.Com.mp3",
+  "audioFileName": "Sempoove-Poove-VmusiQ.Com.mp3",
+  "audioDurationMs": 297665,
+  "srtRelativePath": "projects/dbad742ac7754891a7f33d85c2eb9f57/srt/lyrics.srt",
+  "srtFileName": "lyrics.srt",
+  "lyricCount": 2,
+  "settingsJson": "{\u0022PlanningMode\u0022:\u0022Sequential\u0022,\u0022RandomSeed\u0022:42,\u0022Transition\u0022:{\u0022Type\u0022:\u0022Fade\u0022,\u0022DurationMs\u0022:500},\u0022MinSegmentDurationMs\u0022:3000,\u0022LyricStyle\u0022:\u0022Cinematic\u0022,\u0022ResolutionPreset\u0022:\u0022FullHd1080p\u0022,\u0022Fps\u0022:30,\u0022DefaultImageAnimation\u0022:\u0022ZoomIn\u0022,\u0022CycleImageAnimations\u0022:true,\u0022FontOverride\u0022:null,\u0022FontSizeOverride\u0022:null,\u0022PositionOverride\u0022:null,\u0022AlignmentOverride\u0022:null,\u0022TextColorOverride\u0022:null,\u0022TextColor2Override\u0022:null,\u0022TextColor3Override\u0022:null,\u0022HighlightColorOverride\u0022:null,\u0022OutlineOverride\u0022:null,\u0022ShadowOverride\u0022:null,\u0022FadeInMsOverride\u0022:null,\u0022FadeOutMsOverride\u0022:null,\u0022AssetOrderOverride\u0022:null,\u0022ManualBackgrounds\u0022:null}",
+  "assets": [
+    {
+      "id": "73d11e6b-fafd-44ae-82a2-9628f8f36826",
+      "fileName": "Agri-Tech.png",
+      "relativePath": "projects/dbad742ac7754891a7f33d85c2eb9f57/images/dceabc7b07804044809e14de55a34cee_Agri-Tech.png",
+      "type": "image",
+      "sourceDurationMs": null,
+      "sortOrder": 0
+    }
+  ]
+}
